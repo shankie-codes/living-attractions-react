@@ -1,7 +1,8 @@
 var React = require("react");
 var Attractions = require("./AttractionList.js");
 var FilterList = require("./FilterList.js");
-// var AttractionData = require('../AttractionsMockObject.js');
+var AttractionDataJSON = require('../AttractionDataJSON.js');
+
 var AttractionData = JSON.parse(AttractionDataJSON);
 
 var AppView = React.createClass({
