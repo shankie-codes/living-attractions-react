@@ -41,7 +41,7 @@ var AppView = React.createClass({
       // Check if at least one of the months in the .attractors array matches the filter
       // and at least one of the caetgories in the .attrators array matches the filter
 
-      var match = attraction.attractors.some(function(attractor){
+      return attraction.attractors.some(function(attractor){
         // Check if both the months filter *and* the categories filter match
         
         // If the month filter is 'All' or we don't have a month, then override the monthMatch and always return '1'
@@ -65,7 +65,6 @@ var AppView = React.createClass({
         return (monthMatch !== -1 && categoryMatch !== -1);
       }, this);
 
-      return (match === true);
     }, this);
   },
 
