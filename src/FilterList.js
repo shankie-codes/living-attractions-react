@@ -4,6 +4,13 @@ var React = require("react");
 
 var FilterList = React.createClass({
 
+  propTypes: {
+    items : React.PropTypes.arrayOf(React.PropTypes.any).isRequired,
+    listItemClasses : React.PropTypes.string.isRequired,
+    currentFilter : React.PropTypes.string.isRequired,
+    updateFilter : React.PropTypes.func.isRequired
+  },
+
   renderItem(item, i) {
     // Work out if it's the selected filter item
     var classes = this.props.listItemClasses;

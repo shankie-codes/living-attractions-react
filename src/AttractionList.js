@@ -2,6 +2,12 @@ var React = require("react");
 
 var AttractionList = React.createClass({
 
+  propTypes: {
+    readMoreText : React.PropTypes.string.isRequired,
+    nothingFoundText : React.PropTypes.string.isRequired,
+    items : React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+  },
+
   renderItem(item) {
     return (
     <li key={item.postId}>
