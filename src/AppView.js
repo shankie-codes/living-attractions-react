@@ -35,10 +35,8 @@ var AppView = React.createClass({
     });
   },
 
-  render : function() {
-
-    // Filter the items based on the... errr... filters
-    var displayedItems = this.state.attractions.filter(function(attraction) {
+  getFilteredItems : function() {
+    return this.state.attractions.filter(function(attraction) {
 
       // Check if at least one of the months in the .attractors array matches the filter
       // and at least one of the caetgories in the .attrators array matches the filter
@@ -69,7 +67,10 @@ var AppView = React.createClass({
 
       return (match === true);
     }, this);
+  },
 
+  render : function() {
+    var displayedItems = this.getFilteredItems();
 
     return (
       <div>
