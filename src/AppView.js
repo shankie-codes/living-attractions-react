@@ -74,7 +74,7 @@ var AppView = React.createClass({
     return (
       <div>
         <div className="living-attractions-filters">
-          <a href="#" className="clear-filters" onClick={this.clearFilters}>Clear filters</a>
+          <button className="clear-filters" onClick={this.clearFilters}>Clear filters</button>
           <div className="collapsing-menu-wrapper is-closed">
             <FilterList 
               items={this.state.attractorCategories} 
