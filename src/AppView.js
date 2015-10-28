@@ -46,25 +46,17 @@ var AppView = React.createClass({
       // and at least one of the caetgories in the .attrators array matches the filter
 
       return attraction.attractors.some(function(attractor){
-        // Check if both the months filter *and* the categories filter match
-        
-        // If the month filter is 'All' or we don't have a month, then override the monthMatch and always return '1'
-        if(this.state.monthFilter == "All" || attractor.month === null){
-          var monthMatch = true;
-        }
-        else{
-          // Check if the current month === the filter
-          var monthMatch = contains(attractor.month, this.state.monthFilter);
-        }
+        var monthMatch = (
+          this.state.monthFilter === "All" ||
+          attractor.month === null ||
+          contains(attractor.month, this.state.monthFilter)
+        );
 
-        // If the category filter is 'All' or there's no category on the attractor, then override the monthMatch and always return '1'
-        if(this.state.categoryFilter == "All" || attractor.category === null) {
-          var categoryMatch = true;
-        }
-        else{
-          // Check if the current category === the filter
-          var categoryMatch = contains(attractor.category, this.state.categoryFilter);
-        }
+        var categoryMatch = (
+          this.state.categoryFilter === "All" ||
+          attractor.category === null ||
+          contains(attractor.category, this.state.categoryFilter)
+        );
 
         return (monthMatch && categoryMatch);
       }, this);
