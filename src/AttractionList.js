@@ -1,5 +1,4 @@
 var React = require("react");
-var AttractionData = require("../AttractionData");
 
 var AttractionList = React.createClass({
 
@@ -11,7 +10,7 @@ var AttractionList = React.createClass({
         <div className="featured-living-attraction-item-text">
           <h2 className="content-title">{item.title}</h2>
           <p>{item.exceprt}</p>
-          <a href={item.permalink} className="button">{AttractionData.strings.readmore}</a>  
+          <a href={item.permalink} className="button">{this.props.readMoreText}</a>
         </div>
       </div>
     </li> );
@@ -22,7 +21,7 @@ var AttractionList = React.createClass({
     //Check to make sure that we got some items
     if(this.props.items.length === 0){
       return(
-        <span>{AttractionData.strings.nothingfound}</span>
+        <span>{this.props.nothingFoundText}</span>
       );
     }
     else{

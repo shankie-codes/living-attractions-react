@@ -91,7 +91,11 @@ var AppView = React.createClass({
             updateFilter={this.handleMonthFilterUpdate} 
           />
         </div>
-        <Attractions items={displayedItems} />
+        <Attractions
+          items={displayedItems}
+          readMoreText={AttractionData.strings.readmore}
+          nothingFoundText={AttractionData.strings.nothingfound}
+        />
       </div>
     );
   }
