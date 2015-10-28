@@ -68,7 +68,7 @@ var AppView = React.createClass({
       }, this);
 
       return (match === true);
-    }.bind(this));
+    }, this);
 
 
     return (
