@@ -28,7 +28,7 @@ var FilterList = React.createClass({
     );
   },
 
-  handleClick: function(item, event) {
+  handleClick(item, event) {
     this.props.updateFilter(item);
   },
 

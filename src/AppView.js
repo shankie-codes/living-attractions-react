@@ -10,7 +10,7 @@ function contains(haystack, needle) {
 
 var AppView = React.createClass({
 
-  getInitialState: function() {
+  getInitialState() {
     return {
       months : AttractionData.months,
       attractorCategories : AttractionData.attractorCategories,
@@ -20,26 +20,26 @@ var AppView = React.createClass({
     };
   },
 
-  handleMonthFilterUpdate : function(filterValue){
+  handleMonthFilterUpdate(filterValue){
     this.setState({
       monthFilter : filterValue
     });
   },
 
-  handleCategoryFilterUpdate : function(filterValue){
+  handleCategoryFilterUpdate(filterValue){
     this.setState({
       categoryFilter : filterValue
     });
   },
 
-  clearFilters : function(){
+  clearFilters(){
     this.setState({
       monthFilter : "All",
       categoryFilter : "All"
     });
   },
 
-  getFilteredItems : function() {
+  getFilteredItems() {
     return this.state.attractions.filter(function(attraction) {
 
       // Check if at least one of the months in the .attractors array matches the filter
@@ -64,7 +64,7 @@ var AppView = React.createClass({
     }, this);
   },
 
-  render : function() {
+  render() {
     var displayedItems = this.getFilteredItems();
 
     return (
