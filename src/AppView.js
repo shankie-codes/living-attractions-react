@@ -46,23 +46,23 @@ var AppView = React.createClass({
         
         // If the month filter is 'All' or we don't have a month, then override the monthMatch and always return '1'
         if(this.state.monthFilter == "All" || attractor.month === null){
-          var monthMatch = 1;
+          var monthMatch = true;
         }
         else{
           // Check if the current month === the filter
-          var monthMatch = attractor.month.toLowerCase().indexOf(this.state.monthFilter.toLowerCase());
+          var monthMatch = attractor.month.toLowerCase().indexOf(this.state.monthFilter.toLowerCase()) !== -1;
         }
 
         // If the category filter is 'All' or there's no category on the attractor, then override the monthMatch and always return '1'
         if(this.state.categoryFilter == "All" || attractor.category === null) {
-          var categoryMatch = 1;
+          var categoryMatch = true;
         }
         else{
           // Check if the current category === the filter
-          var categoryMatch = attractor.category.toLowerCase().indexOf(this.state.categoryFilter.toLowerCase());
+          var categoryMatch = attractor.category.toLowerCase().indexOf(this.state.categoryFilter.toLowerCase()) !== -1;
         }
 
-        return (monthMatch !== -1 && categoryMatch !== -1);
+        return (monthMatch && categoryMatch);
       }, this);
 
     }, this);
