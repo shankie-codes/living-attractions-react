@@ -31,7 +31,7 @@ var AppView = React.createClass({
   clearFilters : function(){
     this.setState({
       monthFilter : "All",
-      "categoryFilter" : "All"
+      categoryFilter : "All"
     });
   },
 
