@@ -1,5 +1,5 @@
 var React = require("react");
-var AttractionData = JSON.parse(AttractionDataJSON);
+var AttractionData = require("../AttractionData");
 
 var AttractionList = React.createClass({
 
