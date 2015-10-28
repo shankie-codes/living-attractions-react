@@ -8,11 +8,11 @@ var AppView = React.createClass({
 
   getInitialState: function() {
     return {
-      "months" : AttractionData.months,
-      "attractorCategories" : AttractionData.attractorCategories,
-      "attractions" : AttractionData.attractions,
-      "monthFilter" : AttractionData.months[0].monthName,
-      "categoryFilter" : "All"
+      months : AttractionData.months,
+      attractorCategories : AttractionData.attractorCategories,
+      attractions : AttractionData.attractions,
+      monthFilter : AttractionData.months[0].monthName,
+      categoryFilter : "All"
     };
   },
 
