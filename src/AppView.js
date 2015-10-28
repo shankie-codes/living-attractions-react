@@ -91,7 +91,7 @@ var AppView = React.createClass({
             updateFilter={this.handleMonthFilterUpdate} 
           />
         </div>
-        <Attractions items={displayedItems} currentMonth={this.state.monthFilter}/>
+        <Attractions items={displayedItems} />
       </div>
     );
   }
