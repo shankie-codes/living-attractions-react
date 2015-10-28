@@ -3,6 +3,10 @@ var Attractions = require("./AttractionList.js");
 var FilterList = require("./FilterList.js");
 var AttractionData = require('../AttractionData');
 
+function contains(haystack, needle) {
+  return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+}
+
 
 var AppView = React.createClass({
 
@@ -50,7 +54,7 @@ var AppView = React.createClass({
         }
         else{
           // Check if the current month === the filter
-          var monthMatch = attractor.month.toLowerCase().indexOf(this.state.monthFilter.toLowerCase()) !== -1;
+          var monthMatch = contains(attractor.month, this.state.monthFilter);
         }
 
         // If the category filter is 'All' or there's no category on the attractor, then override the monthMatch and always return '1'
@@ -59,7 +63,7 @@ var AppView = React.createClass({
         }
         else{
           // Check if the current category === the filter
-          var categoryMatch = attractor.category.toLowerCase().indexOf(this.state.categoryFilter.toLowerCase()) !== -1;
+          var categoryMatch = contains(attractor.category, this.state.categoryFilter);
         }
 
         return (monthMatch && categoryMatch);
