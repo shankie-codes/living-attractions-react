@@ -1,7 +1,12 @@
 var React = require("react");
-var AttractionData = JSON.parse(AttractionDataJSON);
 
 var AttractionList = React.createClass({
+
+  propTypes: {
+    readMoreText : React.PropTypes.string.isRequired,
+    nothingFoundText : React.PropTypes.string.isRequired,
+    items : React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+  },
 
   renderItem(item) {
     return (
@@ -11,7 +16,7 @@ var AttractionList = React.createClass({
         <div className="featured-living-attraction-item-text">
           <h2 className="content-title">{item.title}</h2>
           <p>{item.exceprt}</p>
-          <a href={item.permalink} className="button">{AttractionData.strings.readmore}</a>  
+          <a href={item.permalink} className="button">{this.props.readMoreText}</a>
         </div>
       </div>
     </li> );
@@ -22,7 +27,7 @@ var AttractionList = React.createClass({
     //Check to make sure that we got some items
     if(this.props.items.length === 0){
       return(
-        <span>{AttractionData.strings.nothingfound}</span>
+        <span>{this.props.nothingFoundText}</span>
       );
     }
     else{

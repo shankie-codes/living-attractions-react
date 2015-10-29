@@ -1,4 +1,4 @@
-AttractionData = {
+{
   "months":[
     {
       "monthName":"Oct",
@@ -607,6 +607,4 @@ AttractionData = {
       ]
     }
   ]
-};
-
-module.exports = AttractionData;
+}
